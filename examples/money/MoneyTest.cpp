@@ -32,7 +32,7 @@ MoneyTest::testConstructor()
   Money money( longNumber, currencyFF );
 
   // Check
-  CPPUNIT_ASSERT_EQUAL( longNumber, money.getAmount() );
+  CPPUNIT_ASSERT_DOUBLES_EQUAL( longNumber, money.getAmount(), 0.0001 );
   CPPUNIT_ASSERT_EQUAL( currencyFF, money.getCurrency() );
 }
 

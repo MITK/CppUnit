@@ -173,11 +173,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotLess( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "less assertion failed" );
+  [[noreturn]] static void CPPUNIT_API failNotLess( std::string expected,
+                                                    std::string actual,
+                                                    const SourceLine &sourceLine,
+                                                    const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                    std::string shortDescription = "less assertion failed" );
 
   /*! \brief Throws an Exception with the specified message and location.
    * \param expected Text describing the expected value.
@@ -187,11 +187,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotGreater( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "greater assertion failed" );
+  [[noreturn]] static void CPPUNIT_API failNotGreater( std::string expected,
+                                                       std::string actual,
+                                                       const SourceLine &sourceLine,
+                                                       const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                       std::string shortDescription = "greater assertion failed" );
 
   /*! \brief Throws an Exception with the specified message and location.
    * \param expected Text describing the expected value.
@@ -201,11 +201,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotLessEqual( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "less equal assertion failed" );
+  [[noreturn]] static void CPPUNIT_API failNotLessEqual( std::string expected,
+                                                         std::string actual,
+                                                         const SourceLine &sourceLine,
+                                                         const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                         std::string shortDescription = "less equal assertion failed" );
 
   /*! \brief Throws an Exception with the specified message and location.
    * \param expected Text describing the expected value.
@@ -215,11 +215,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotGreaterEqual( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "greater equal assertion failed" );  /*! \brief Throws an Exception with the specified message and location.
+  [[noreturn]] static void CPPUNIT_API failNotGreaterEqual( std::string expected,
+                                                            std::string actual,
+                                                            const SourceLine &sourceLine,
+                                                            const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                            std::string shortDescription = "greater equal assertion failed" );  /*! \brief Throws an Exception with the specified message and location.
 
    * \param shouldFail if \c true then the exception is thrown. Otherwise
    *                   nothing happen.

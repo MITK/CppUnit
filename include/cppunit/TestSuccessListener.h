@@ -20,11 +20,11 @@ public:
   TestSuccessListener( SynchronizationObject *syncObject = 0 );
 
   /// Destructor.
-  virtual ~TestSuccessListener();
+  virtual ~TestSuccessListener() override;
 
   virtual void reset();
 
-  void addFailure( const TestFailure &failure );
+  void addFailure( const TestFailure &failure ) override;
 
   /// Returns whether the entire test was successful or not.
   virtual bool wasSuccessful() const;

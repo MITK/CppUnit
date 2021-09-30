@@ -44,7 +44,7 @@ public:
    */
   TestSuite( std::string name = "" );
 
-  ~TestSuite();
+  ~TestSuite() override;
 
   /*! Adds the specified test to the suite.
    * \param test Test to add. Must not be \c nullptr.
@@ -62,9 +62,9 @@ public:
    */
   virtual void deleteContents();
 
-  int getChildTestCount() const;
+  int getChildTestCount() const override;
 
-  Test *doGetChildTestAt( int index ) const;
+  Test *doGetChildTestAt( int index ) const override;
 
 private:
   std::vector<Test *> m_tests;

@@ -15,7 +15,7 @@ public:
   {
   }
 
-  bool operator()() const
+  bool operator()() const override
   {
     return m_protector->protect( m_functor, m_context );
   }

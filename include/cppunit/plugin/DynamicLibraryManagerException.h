@@ -38,7 +38,7 @@ public:
 
   Cause getCause() const;
 
-  const char *what() const throw();
+  const char *what() const throw() override;
 
 private:
   std::string m_message;

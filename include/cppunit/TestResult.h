@@ -51,7 +51,7 @@ public:
   TestResult( SynchronizationObject *syncObject = 0 );
 
   /// Destroys a test result
-  virtual ~TestResult();
+  virtual ~TestResult() override;
 
   virtual void addListener( TestListener *listener );
 

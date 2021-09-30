@@ -27,7 +27,7 @@ public:
   {
   }
 
-  bool operator()() const
+  bool operator()() const override
   {
     (m_target->*m_method)();
     return true;

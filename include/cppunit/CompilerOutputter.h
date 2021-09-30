@@ -68,7 +68,7 @@ public:
                      const std::string &locationFormat = CPPUNIT_COMPILER_LOCATION_FORMAT );
 
   /// Destructor.
-  virtual ~CompilerOutputter();
+  virtual ~CompilerOutputter() override;
 
   /*! \brief Sets the error location format.
    * 
@@ -102,7 +102,7 @@ public:
   static CompilerOutputter *defaultOutputter( TestResultCollector *result,
                                               OStream &stream );
 
-  void write();
+  void write() override;
 
   void setNoWrap();
 

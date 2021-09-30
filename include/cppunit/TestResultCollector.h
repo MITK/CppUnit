@@ -37,7 +37,7 @@ public:
 
   /*! Constructs a TestResultCollector object.
    */
-  TestResultCollector( SynchronizationObject *syncObject = 0 );
+  TestResultCollector( SynchronizationObject *syncObject = nullptr );
 
   /// Destructor.
   virtual ~TestResultCollector() override;

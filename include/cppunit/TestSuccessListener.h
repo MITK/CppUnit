@@ -17,7 +17,7 @@ class CPPUNIT_API TestSuccessListener : public TestListener,
 public:
   /*! Constructs a TestSuccessListener object.
    */
-  TestSuccessListener( SynchronizationObject *syncObject = 0 );
+  TestSuccessListener( SynchronizationObject *syncObject = nullptr );
 
   /// Destructor.
   virtual ~TestSuccessListener() override;

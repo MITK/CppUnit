@@ -19,23 +19,23 @@ class Message;
  * \code
  * #include <cppunit/SourceLine.h>
  * #include <cppunit/TestAssert.h>
- * 
- * void 
+ *
+ * void
  * checkXmlEqual( std::string expectedXml,
  *                std::string actualXml,
  *                CppUnit::SourceLine sourceLine )
  * {
  *   std::string expected = XmlUniformiser( expectedXml ).stripped();
  *   std::string actual = XmlUniformiser( actualXml ).stripped();
- * 
+ *
  *   if ( expected == actual )
  *     return;
- * 
+ *
  *   ::CppUnit::Asserter::failNotEqual( expected,
  *                                      actual,
  *                                      sourceLine );
  * }
- * 
+ *
  * /// Asserts that two XML strings are equivalent.
  * #define CPPUNITTEST_ASSERT_XML_EQUAL( expected, actual ) \
  *     checkXmlEqual( expected, actual,                     \
@@ -47,14 +47,14 @@ struct Asserter
 {
   /*! \brief Throws a Exception with the specified message and location.
    */
-  [[noreturn]] static void CPPUNIT_API fail( const Message &message, 
-                                const SourceLine &sourceLine = SourceLine() );
+  [[noreturn]] static void CPPUNIT_API fail( const Message &message,
+                                             const SourceLine &sourceLine = SourceLine() );
 
   /*! \brief Throws a Exception with the specified message and location.
    * \deprecated Use fail( Message, SourceLine ) instead.
    */
-  [[noreturn]] static void CPPUNIT_API fail( std::string message, 
-                                const SourceLine &sourceLine = SourceLine() );
+  [[noreturn]] static void CPPUNIT_API fail( std::string message,
+                                             const SourceLine &sourceLine = SourceLine() );
 
   /*! \brief Throws a Exception with the specified message and location.
    * \param shouldFail if \c true then the exception is thrown. Otherwise
@@ -62,8 +62,8 @@ struct Asserter
    * \param message Message explaining the assertion failiure.
    * \param sourceLine Location of the assertion.
    */
-  static void CPPUNIT_API failIf( bool shouldFail, 
-                                  const Message &message, 
+  static void CPPUNIT_API failIf( bool shouldFail,
+                                  const Message &message,
                                   const SourceLine &sourceLine = SourceLine() );
 
   /*! \brief Throws a Exception with the specified message and location.
@@ -73,13 +73,13 @@ struct Asserter
    * \param message Message explaining the assertion failiure.
    * \param sourceLine Location of the assertion.
    */
-  static void CPPUNIT_API failIf( bool shouldFail, 
-                                  std::string message, 
+  static void CPPUNIT_API failIf( bool shouldFail,
+                                  std::string message,
                                   const SourceLine &sourceLine = SourceLine() );
 
   /*! \brief Returns a expected value string for a message, case equal than
    * Typically used to create 'not equal' message, or to check that a message
-   * contains the expected content when writing unit tests for your custom 
+   * contains the expected content when writing unit tests for your custom
    * assertions.
    *
    * \param expectedValue String that represents the expected value.
@@ -90,7 +90,7 @@ struct Asserter
   static std::string CPPUNIT_API makeExpected( const std::string &expectedValue );
   /*! \brief Returns a expected value string for a message, case equal than
    * Typically used to create 'not equal' message, or to check that a message
-   * contains the expected content when writing unit tests for your custom 
+   * contains the expected content when writing unit tests for your custom
    * assertions.
    *
    * \param expectedValue String that represents the expected value.
@@ -129,7 +129,7 @@ struct Asserter
 
   /*! \brief Returns an actual value string for a message.
    * Typically used to create 'not equal' message, or to check that a message
-   * contains the expected content when writing unit tests for your custom 
+   * contains the expected content when writing unit tests for your custom
    * assertions.
    *
    * \param actualValue String that represents the actual value.
@@ -140,7 +140,7 @@ struct Asserter
 
   /*!
    * \deprecated Use makeMessage instead
-   */ 
+   */
   static Message CPPUNIT_API makeNotEqualMessage( const std::string &expectedValue,
                                                   const std::string &actualValue,
                                                   const AdditionalMessage &additionalMessage = AdditionalMessage(),
@@ -159,8 +159,8 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  [[noreturn]] static void CPPUNIT_API failNotEqual( std::string expected, 
-                                        std::string actual, 
+  [[noreturn]] static void CPPUNIT_API failNotEqual( std::string expected,
+                                        std::string actual,
                                         const SourceLine &sourceLine,
                                         const AdditionalMessage &additionalMessage = AdditionalMessage(),
                                         std::string shortDescription = "equality assertion failed" );
@@ -231,8 +231,8 @@ struct Asserter
    * \param shortDescription Short description for the failure message.
    */
   static void CPPUNIT_API failNotEqualIf( bool shouldFail,
-                                          std::string expected, 
-                                          std::string actual, 
+                                          std::string expected,
+                                          std::string actual,
                                           const SourceLine &sourceLine,
                                           const AdditionalMessage &additionalMessage = AdditionalMessage(),
                                           std::string shortDescription = "equality assertion failed" );

@@ -124,7 +124,6 @@ XmlElement::elementFor( const std::string &name ) const
   }
 
   throw std::invalid_argument( "XmlElement::elementFor(), not matching child element found" );
-  return nullptr;  // make some compilers happy.
 }
 
 

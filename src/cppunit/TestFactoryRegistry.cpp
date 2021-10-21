@@ -143,12 +143,20 @@ TestFactoryRegistry::makeTest()
 void 
 TestFactoryRegistry::addTestToSuite( TestSuite *suite )
 {
+  std::multimap<std::string, Test *> sorted;
   for ( Factories::iterator it = m_factories.begin(); 
         it != m_factories.end(); 
         ++it )
   {
     TestFactory *factory = *it;
-    suite->addTest( factory->makeTest() );
+    Test *test = factory->makeTest();
+    sorted.insert({test->getName(), test});
+  }
+  // In the unlikely case of multiple Tests with identical names, those will
+  // still be added in random order:
+  for (auto const &i: sorted)
+  {
+    suite->addTest( i.second );
   }
 }
 
